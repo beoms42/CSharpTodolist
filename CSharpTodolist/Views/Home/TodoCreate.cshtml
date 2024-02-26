@@ -1,0 +1,26 @@
+﻿@model CSharpTodolist.Models.TodoList
+
+@using (Html.BeginForm("CreateTodoAction", "home", FormMethod.Post))
+{
+    <div>
+        <label for="Title">제목:</label>
+        <input type="text" id="Title" name="Title" value="" />
+    </div>
+    
+    <div>
+        <label for="Content">내용:</label>
+        <textarea id="Content" name="Content"></textarea>
+    </div>
+    
+    <div>
+        <label for="CreateDate">작성일:</label>
+        <input type="text" id="CreateDate" name="CreateDate" value="" />
+    </div>
+    
+    <div>
+        <label for="UpdateDate">수정일:</label>
+        <input type="text" id="UpdateDate" name="UpdateDate" value="" />
+    </div>
+    
+    <input type="submit" value="저장" />
+}

@@ -1,0 +1,35 @@
+﻿@model List<TodoList>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <a href="@Url.Action("CreateTodo", "Home")">Add TodoList</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Create Date</th>
+                <th>Update Date</th>
+                <th>Can Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><a href="@Url.Action("UpdateView", "Home", new {Id = item.Id})">@item.Title</a></td>
+                    <td>@item.Content</td>
+                    <td>@item.CreateDate</td>
+                    <td>@item.UpdateDate</td>
+                    <td><a href="@Url.Action("DeleteTodo", "Home", new {Id = item.Id})">X</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
